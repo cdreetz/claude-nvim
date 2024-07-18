@@ -44,6 +44,8 @@ local function call_claude_api_stream(messages, callback)
 		"x-api-key: " .. M.config.api_key,
 		"-H",
 		"Content-Type: application/json",
+		"-H",
+		"anthropic-version: 2023-06-01",
 		"-d",
 		json.encode({
 			model = M.config.model,
